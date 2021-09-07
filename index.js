@@ -3,7 +3,7 @@ const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const proxyMiddleware = createProxyMiddleware({
-  target: 'https://solana--mainnet.datahub.figment.io/',
+  target: process.env.FIGMENT_URL,
   changeOrigin: true,
   headers: {
     Authorization: process.env.FIGMENT_TOKEN,
